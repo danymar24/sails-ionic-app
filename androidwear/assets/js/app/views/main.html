@@ -1,0 +1,20 @@
+<div layout="row" layout-align="center center">
+	<form>
+	  <md-card md-theme-watch>
+	    <md-card-title>
+	      <md-card-title-text>
+	        <span class="md-headline">Notifications</span>
+	      </md-card-title-text>
+	    </md-card-title>
+	    <md-card-content>
+			<md-input-container class="md-block">
+	          <label>Notification</label>
+	          <textarea ng-model="notification.text" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+	        </md-input-container>
+	    </md-card-content>
+	    <md-card-actions layout="row" layout-align="end center">
+	      <md-button ng-click="send(notification)">Enviar</md-button>
+	    </md-card-actions>
+	  </md-card>
+	</form>
+</div>
