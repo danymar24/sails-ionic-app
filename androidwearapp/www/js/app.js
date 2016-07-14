@@ -71,6 +71,9 @@ angular.module('wear', [
 
 .run(['$rootScope', '$ionicPlatform', '$state', '$mdToast', '$sails', 'config', function($rootScope, $ionicPlatform, $state, $mdToast, $sails, config){
   $ionicPlatform.ready(function() {
+
+  	window.cordova.plugins.backgroundMode.enable();
+
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
