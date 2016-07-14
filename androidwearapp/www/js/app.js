@@ -19,7 +19,7 @@ angular.module('wear', [
 	$stateProvider
 	  .state('home', {
 	    url: '/',
-	    templateUrl: '/js/app/views/main.html',
+	    templateUrl: 'js/app/main/main.html',
 	    controller: 'MainController',
 	    controllerAs: 'vm',
 	  });
@@ -65,11 +65,11 @@ angular.module('wear', [
 	  'A700': '#E75753'
 	});
 
-	$sailsProvider.url = 'localhost:1337';
+	$sailsProvider.url = 'http://192.168.0.148:1337';
 
 })
 
-.run(['$rootScope', '$ionicPlatform', '$state', '$mdToast', '$sails', function($rootScope, $ionicPlatform, $state, $mdToast, $sails){
+.run(['$rootScope', '$ionicPlatform', '$state', '$mdToast', '$sails', 'config', function($rootScope, $ionicPlatform, $state, $mdToast, $sails, config){
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -93,6 +93,15 @@ angular.module('wear', [
           .position('top right')
           .textContent(message.data.text));
 	})
+  // AndroidWear.onConnect(function(e) {
+  //     alert("Connection Successfully Established - handle: " + e.handle);
+
+  //     AndroidWear.onDataReceived(e.handle, function(e) {
+  //         alert("Data received - handle: " + e.handle + " data: "+ e.data);
+  //     });
+
+  //     AndroidWear.sendData(e.handle, "Hello From Cordova!");
+  // });
   });
 }])
 
@@ -100,5 +109,5 @@ angular.module('wear', [
 .constant('config', {
 	appName: 'wearTest',
 	appVersion: 0.0,
-	apiUrl: ''
+	apiUrl: 'http://192.168.0.148:1337'
 });

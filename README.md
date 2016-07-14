@@ -18,4 +18,5 @@ Inside the folder androidwearapp is located the ionic app, to run it just run:
   
 # To do
 
-  * Add android wear support
+  * Add run on background to app
+  * Add android wear support to app

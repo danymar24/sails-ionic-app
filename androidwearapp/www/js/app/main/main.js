@@ -5,8 +5,8 @@
 */
 angular.module('main', [])
 
-.service('notifications', ['$resource', function($resource){
-	return $resource('http://localhost:1337/notifications', {}, {
+.service('notifications', ['$resource', 'config', function($resource, config){
+	return $resource(config.apiUrl + '/notifications', {}, {
 		post: {
 			method: 'POST',
 			isArray: false
